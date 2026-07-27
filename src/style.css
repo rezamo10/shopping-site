@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@theme{
+	--color-header-300: #D1D5DB;
+	--color-brown-100: #ECE0D1;
+	--color-brown-300: #DBC1AC;
+	--color-brown-600: #967259;
+	--color-brown-900: #634832;
+
+
+	--shadow-normal: 0px 1px 10px rgba(0, 0, 0, .05);
+
+}
