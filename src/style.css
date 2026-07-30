@@ -20,3 +20,25 @@
 	--font-PoppinsMedium: 'Poppins medium';
 	--font-PoppinsSemiBold: 'Poppins semiBold';
 }
+
+.nav-link{
+	position: relative;
+	transition: all 150ms ease-in;
+}
+.nav-link::after{
+	content: '';
+	position: absolute;
+	bottom: -12px;
+	left: 0;
+	width: 0;
+	height: 4px;
+	background-color: #EB8426;
+	border-radius: 50px;
+	transition: all 150ms ease-in;
+}
+.nav-link.active::after{
+	width: 42px;
+}
+.nav-link.active{
+	color: #EB8426;
+}

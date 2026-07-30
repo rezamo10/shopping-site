@@ -7,6 +7,118 @@
 	<link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
+	<svg class="hidden">
+		<symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+		</symbol>
+		<symbol id="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+		</symbol>
+		<symbol id="user" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M19.7274 20.4471C19.2716 19.1713 18.2672 18.0439 16.8701 17.2399C15.4729 16.4358 13.7611 16 12 16C10.2389 16 8.52706 16.4358 7.12991 17.2399C5.73276 18.0439 4.72839 19.1713 4.27259 20.4471" stroke="#5f5f5f" stroke-linecap="round"/>
+			<circle cx="12" cy="8" r="4" stroke="#5f5f5f" stroke-linecap="round"/>
+		</symbol>
+		<symbol id="shopping-bag" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8 12L8 8C8 5.79086 9.79086 4 12 4C14.2091 4 16 5.79086 16 8L16 12" stroke="#5f5f5f" stroke-linecap="round"/>
+			<path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#5f5f5f"/>
+		</symbol>
+		<symbol id="sort" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5 7H19" stroke="#5F5F5F" stroke-width="2" stroke-linecap="round"/>
+			<path d="M5 12H15" stroke="#5F5F5F" stroke-width="2" stroke-linecap="round"/>
+			<path d="M5 17H11" stroke="#5F5F5F" stroke-width="2" stroke-linecap="round"/>
+		</symbol>
+	
+	</svg>
+	<header class="w-full bg-orange-50">
+		<div class="max-w-7xl mx-auto px-4 md:px-3">
+			<nav class="py-6">
+				<div class="flex items-center justify-between mb-4 lg:mb-6">
+					<div class="shrink-0">
+						<h2 class="text-orange-500 font-PoppinsSemiBold mr-6">E-commerce</h2>
+					</div>
+					<div class="max-w-190 w-full hidden lg:block lg:mr-6">
+						<div class="flex items-center bg-white py-2 pl-2 pr-3 rounded-4xl gap-x-4">
+							<button class="flex items-center shrink-0 gap-x-2 font-Poppins text-xs bg-gray-100 rounded-4xl py-2 px-6 text-neutral-700">
+								All categories
+								<svg class="w-4 h-4">
+									<use href="#chevron-down"></use>
+								</svg>
+							</button>
+							<input class="font-Poppins text-xs w-full focus:border-none focus:outline-none" type="text" placeholder="Search anything">
+							<button class="flex ml-auto shrink-0">
+								<svg class="w-6 h-6">
+									<use href="#search-icon"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="flex items-center gap-x-4.75">
+						<a href="#" class="hidden sm:block bg-orange-500 font-PoppinsMedium text-xs py-4 px-7.5 rounded-4xl text-white">Help</a>
+						<div class="flex items-center gap-x-6">
+							<a href="#" class="flex items-center gap-x-2 font-Poppins text-sm text-neutral-700">
+								<svg class="w-6 h-6">
+									<use href="#user"></use>
+								</svg>
+								<span class="hidden sm:inline-block">Account</span>
+							</a>
+							<a href="#" class="flex items-center gap-x-2 font-Poppins text-sm text-neutral-700">
+								<svg class="w-6 h-6 fill-neutral-600">
+									<use href="#shopping-bag"></use>
+								</svg>
+								<span class="hidden sm:inline-block">Shopping</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center">
+					<ul class="items-center flex-wrap hidden lg:flex gap-6 xl:gap-x-12 text-sm font-Poppins text-neutral-700">
+						<li>
+							<a href="#" class="nav-link">Jewelry & Accessories</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Clothing & Shoes</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link active">Home & Living</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Wedding & Party</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Toys & Entertainment</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Art & Collectibles</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">Craft Supplies & Tools</a>
+						</li>
+					</ul>
+					<button class="flex justify-center items-center lg:hidden w-12 md:w-21.5 py-3 px-3 bg-white rounded-4xl mr-4 md:mr-6">
+							<svg class="w-6 h-6">
+								<use href="#sort"></use>
+							</svg>
+					</button>
+					<div class="max-w-190 w-full lg:hidden">
+							<div class="flex items-center bg-white py-3 md:py-2 pl-4 md:pl-2 pr-3 rounded-4xl gap-x-4">
+								<button class="items-center shrink-0 gap-x-2 hidden md:flex font-Poppins text-xs bg-gray-100 rounded-4xl py-2 px-6 text-neutral-700">
+									All categories
+									<svg class="w-4 h-4">
+										<use href="#chevron-down"></use>
+									</svg>
+								</button>
+								<input class="font-Poppins text-xs w-full focus:border-none focus:outline-none" type="text" placeholder="Search anything">
+								<button class="flex ml-auto shrink-0">
+									<svg class="w-6 h-6">
+										<use href="#search-icon"></use>
+									</svg>
+								</button>
+							</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
 	<script type="module" src="./src/main.js"></script>
 </body>
 </html>
