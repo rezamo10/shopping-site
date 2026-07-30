@@ -57,5 +57,5 @@
 	@apply left-0;
 }
 .counter{
-	@apply absolute w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white font-Poppins text-xs -top-3 md:-top-6 left-3;
+	@apply absolute w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white font-Poppins text-xs -top-3 sm:-top-6 left-3;
 }
