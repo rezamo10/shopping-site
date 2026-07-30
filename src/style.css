@@ -42,3 +42,17 @@
 .nav-link.active{
 	color: #EB8426;
 }
+.overlay{
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 10;
+	visibility: hidden;
+	opacity: 0;
+}
+.menu{
+	@apply fixed -left-3/4 top-0 bottom-0 w-3/4 bg-white p-5 transition-all;
+}
+.menu.active{
+	@apply left-0;
+}
