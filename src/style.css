@@ -59,3 +59,22 @@
 .counter{
 	@apply absolute w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white font-Poppins text-xs -top-3 sm:-top-6 left-3;
 }
+
+.productsSwiper .swiper-pagination{
+	position: static !important;
+	margin-top: 24px!important;
+
+}
+.productsSwiper .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background: #e5e7eb;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+.productsSwiper .swiper-pagination-bullet-active {
+	background: #EB8426;
+	width: 12px;
+	border-radius: 9999px;
+}
