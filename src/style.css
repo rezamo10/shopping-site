@@ -72,7 +72,6 @@
 	opacity: 1;
 	transition: all 0.3s ease;
 }
-
 .productsSwiper .swiper-pagination-bullet-active {
 	background: #EB8426;
 	width: 12px;
