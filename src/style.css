@@ -78,3 +78,24 @@
 	width: 12px;
 	border-radius: 9999px;
 }
+.benefits-swiper .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background: #e5e7eb;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+.benefits-swiper .swiper-pagination-bullet-active {
+	background: #EB8426;
+	width: 12px;
+	border-radius: 9999px;
+}
+.benefits-swiper .swiper-pagination{
+	position: static !important;
+	margin-top: 24px!important;
+
+}
+.card-benefits{
+	@apply flex items-center justify-between flex-col-reverse gap-6 lg:gap-0 lg:flex-row p-6 bg-gray-100 rounded-sm;
+}
