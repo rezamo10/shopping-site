@@ -19,6 +19,7 @@
 	--font-Poppins: 'Poppins Regular';
 	--font-PoppinsMedium: 'Poppins medium';
 	--font-PoppinsSemiBold: 'Poppins semiBold';
+	--shadow-normal: 0 0 8px 0 rgba(0, 0, 0, 15%) ;
 }
 
 .nav-link{
@@ -51,7 +52,7 @@
 	opacity: 0;
 }
 .menu{
-	@apply fixed -left-3/4 top-0 bottom-0 w-3/4 bg-white p-5 transition-all;
+	@apply fixed -left-3/4 top-0 bottom-0 w-3/4 bg-white p-5 transition-all z-20;
 }
 .menu.active{
 	@apply left-0;
@@ -95,6 +96,38 @@
 	margin-top: 24px!important;
 
 }
+.swiper-category-slide .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background: #e5e7eb;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+.swiper-category-slide .swiper-pagination-bullet-active {
+	background: #EB8426;
+	width: 12px;
+	border-radius: 9999px;
+}
+.swiper-category-slide .swiper-pagination{
+	position: static !important;
+	margin-top: 24px!important;
+
+}
+
 .card-benefits{
 	@apply flex items-center justify-between flex-col-reverse gap-6 lg:gap-0 lg:flex-row p-6 bg-gray-100 rounded-sm;
+}
+.left-btn{
+	@apply absolute flex items-center justify-center -left-24 top-1/2 w-12 h-12 rounded-full bg-gray-100 text-neutral-600 cursor-pointer;
+}
+.right-btn{
+	@apply absolute flex items-center justify-center -right-24 top-1/2 w-12 h-12 rounded-full bg-gray-100 text-neutral-600 cursor-pointer;
+}
+
+
+@media (min-width: 900px) {
+	.swiper-category-slide .swiper-pagination {
+		display: none;
+	}
 }

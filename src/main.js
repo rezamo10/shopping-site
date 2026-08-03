@@ -60,5 +60,24 @@ const swiper2 = new Swiper('.benefits-swiper', {
 		900: { slidesPerView: 3, spaceBetween: 24 },
 	},
 });
+const swiper3 = new Swiper('.swiper-category-slide', {
+	modules: [Navigation, Pagination],
+	slidesPerView: 4,
+	spaceBetween: 24,
+	navigation: {
+		nextEl: '.next-slide-btn',
+		prevEl: '.prev-slide-btn',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		0: { slidesPerView: 2, spaceBetween: 16 },
+		640: { slidesPerView: 3, spaceBetween: 16 },
+		900: { slidesPerView: 5, spaceBetween: 24 },
+		1024: { slidesPerView: 7.5, spaceBetween: 24},
+	},
+});
 menuBtn.addEventListener("click", showMenu);
 closeBtn.addEventListener("click", hideMenu);
