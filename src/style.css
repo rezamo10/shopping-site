@@ -19,6 +19,7 @@
 	--font-Poppins: 'Poppins Regular';
 	--font-PoppinsMedium: 'Poppins medium';
 	--font-PoppinsSemiBold: 'Poppins semiBold';
+	--color-majorelle-blue: #5959d9;
 	--shadow-normal: 0 0 8px 0 rgba(0, 0, 0, 15%) ;
 }
 
@@ -145,6 +146,12 @@
 	position: static !important;
 	margin-top: 24px!important;
 
+}
+.mail-btn{
+	@apply justify-center items-center gap-x-2 px-6 py-2 font-PoppinsMedium text-xs bg-orange-400 rounded-4xl text-center text-white cursor-pointer hidden md:flex;
+}
+.mail-btn-mobile{
+	@apply w-full justify-center items-center gap-x-2 px-6 py-2 font-PoppinsMedium text-xs bg-orange-400 rounded-4xl text-center text-white cursor-pointer flex md:hidden;
 }
 @media (min-width: 900px) {
 	.swiper-product-slide .swiper-pagination,
