@@ -79,5 +79,25 @@ const swiper3 = new Swiper('.swiper-category-slide', {
 		1024: { slidesPerView: 7.5, spaceBetween: 24},
 	},
 });
+const swiper4 = new Swiper('.swiper-product-slide', {
+	modules: [Navigation, Pagination],
+	slidesPerView: 4,
+	spaceBetween: 24,
+	navigation: {
+		nextEl: '.next-pro-btn',
+		prevEl: '.prev-pro-btn',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		0: { slidesPerView: 1.5, spaceBetween: 16 },
+		640: { slidesPerView: 3, spaceBetween: 16 },
+		900: { slidesPerView: 4, spaceBetween: 24 },
+		1024: { slidesPerView: 4, spaceBetween: 24},
+		1280: { slidesPerView: 5.5, spaceBetween: 24},
+	},
+});
 menuBtn.addEventListener("click", showMenu);
 closeBtn.addEventListener("click", hideMenu);
