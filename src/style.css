@@ -153,6 +153,88 @@
 .mail-btn-mobile{
 	@apply w-full justify-center items-center gap-x-2 px-6 py-2 font-PoppinsMedium text-xs bg-orange-400 rounded-4xl text-center text-white cursor-pointer flex md:hidden;
 }
+.mail-btn-data:disabled{
+	opacity: .5;
+	cursor: not-allowed;
+}
+.pop-message{
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	max-width: 290px;
+	height: 110px;
+	z-index: 50;
+	border-radius: 9px;
+	background-color: white;
+	opacity: 0;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	box-shadow: 0 0 1.5rem 0 #1a1f4360;
+	transform: translateX(-100%);
+}
+.pop-message.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+.toast-wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-left: 32px;
+}
+.toast-wrapper::after{
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 8px;
+	height: 80%;
+	background-color: red;
+	border-radius: 40px;
+}
+.pop-message.success .toast-wrapper::after{
+	background-color: #03A65A;
+}
+.pop-message.fail .toast-wrapper::after{
+	background-color: #db3056;
+}
+.toast-messages{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	margin: auto 0;
+	padding-right: 20px;
+}
+.pop-message.success .toast-title{
+	color: #03a65a;
+}
+.pop-message.fail .toast-title{
+	color: #db3056;
+}
+.toast-title{
+	font-size: 19px;
+	display: block;
+	font-family: 'Poppins Medium',sans-serif;
+}
+.toast-message{
+	margin-top: 4px;
+	color: #595959;
+	font-family: 'Poppins Regular',sans-serif;
+	font-size: 14px;
+}
+.success-message{
+	display: none;
+}
+.error-message{
+	display: none;
+}
+.pop-message.success .success-message{
+	display: block;
+}
+.pop-message.fail .error-message{
+	display: block;
+}
 @media (min-width: 900px) {
 	.swiper-product-slide .swiper-pagination,
 	.swiper-category-slide .swiper-pagination {

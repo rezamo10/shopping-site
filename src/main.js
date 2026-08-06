@@ -9,6 +9,10 @@ const navLinks = document.querySelectorAll(".nav-link");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const menu = document.querySelector(".menu");
+const mailInput = document.querySelector("#mail-input");
+const popMessage = document.querySelector(".pop-message");
+const mailBtnMobile = document.querySelectorAll(".mail-btn-data");
+let toastTimer;
 
 navLinks.forEach(link => {
 	link.addEventListener("click" , (e)=>{
@@ -22,7 +26,26 @@ function hideMenu() {
 function showMenu() {
 	menu.classList.add("active");
 }
-
+function checkEmail() {
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	let userMail = mailInput.value.trim();
+	const isValid = emailRegex.test(userMail);
+	popMessage.classList.toggle("success", isValid);
+	popMessage.classList.toggle("fail", !isValid);
+	popMessage.classList.add("show");
+	mailInput.value = "";
+	toggleBtn();
+	clearTimeout(toastTimer);
+	toastTimer = setTimeout(()=>{
+		popMessage.classList.remove("show");
+	},3000)
+}
+function toggleBtn(){
+	mailBtnMobile.forEach(btn =>{
+		btn.disabled = mailInput.value.trim() === "";
+	})
+}
+toggleBtn();
 const swiper = new Swiper('.productsSwiper', {
 	modules: [Navigation, Pagination],
 	slidesPerView: 4,
@@ -101,3 +124,5 @@ const swiper4 = new Swiper('.swiper-product-slide', {
 });
 menuBtn.addEventListener("click", showMenu);
 closeBtn.addEventListener("click", hideMenu);
+mailInput.addEventListener("input", toggleBtn);
+mailBtnMobile.forEach(btn => btn.addEventListener("click", checkEmail));

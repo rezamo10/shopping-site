@@ -576,15 +576,15 @@
 					</div>
 					<div class="w-full">
 						<div class="w-full md:w-3/4 lg:w-2/4 h-12 py-2 pl-6 pr-2 flex items-center justify-between  bg-white mx-auto mt-6 md:mt-12 mb-4 lg:mb-5 rounded-full">
-							<input type="text" placeholder="Drop your Email" class="font-Poppins text-xs w-3/4 outline-hidden border-hidden">
-							<button class="mail-btn">
+							<input id="mail-input" type="text" placeholder="Drop your Email" class="font-Poppins text-xs w-3/4 outline-hidden border-hidden">
+							<button class="mail-btn mail-btn-data" disabled>
 								Subscribe
 								<svg class="w-4 h-4">
 									<use href="#arrow-right"></use>
 								</svg>
 							</button>
 						</div>
-						<button class="mail-btn-mobile">
+						<button class="mail-btn-mobile mail-btn-data" disabled>
 							Subscribe
 							<svg class="w-4 h-4">
 								<use href="#arrow-right"></use>
@@ -596,7 +596,20 @@
 			</div>
 		</section>
 	</main>
-	
+	<div class="pop-message flex items-center">
+		<div class="toast-wrapper">
+			<div class="toast-messages">
+				<div class="success-message">
+					<span class="toast-title">Success!</span>
+					<span class="toast-message">You're all set! Your email has been added successfully.</span>
+				</div>
+				<div class="error-message">
+					<span class="toast-title">Error!</span>
+					<span class="toast-message">Invalid email address. Please try again.</span>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="overlay"></div>
 	<script type="module" src="./src/main.js"></script>
 </body>
