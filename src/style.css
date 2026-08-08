@@ -235,6 +235,12 @@
 .pop-message.fail .error-message{
 	display: block;
 }
+.item-title-wrapper{
+	@apply flex items-center justify-between py-3 md:py-0 pl-6 md:pl-0 pr-3 bg-gray-100 max-md:group-[.is-active]:bg-orange-400 max-md:group-[.is-active]:text-white md:bg-transparent rounded-4xl font-PoppinsMedium leading-4.5 md:leading-5;
+}
+.item-list{
+	@apply hidden group-[.is-active]:flex md:flex flex-col md:gap-y-3 pl-6 md:pl-0 mt-4 md:mt-6 md:mb-0 *:border-b *:border-b-neutral-200 md:*:border-b-0 *:py-3 md:*:py-0 font-Poppins text-sm leading-6;
+}
 @media (min-width: 900px) {
 	.swiper-product-slide .swiper-pagination,
 	.swiper-category-slide .swiper-pagination {
