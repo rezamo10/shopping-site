@@ -13,6 +13,7 @@ const mailInput = document.querySelector("#mail-input");
 const popMessage = document.querySelector(".pop-message");
 const mailBtnMobile = document.querySelectorAll(".mail-btn-data");
 const footerItem = document.querySelectorAll(".footer-item");
+const categoryListBtn = document.querySelectorAll(".category-list-btn");
 let toastTimer;
 
 navLinks.forEach(link => {
@@ -54,6 +55,12 @@ footerItem.forEach(item =>{
 		if(!isAlreadyActive){
 			item.classList.add("is-active");
 		}
+	})
+})
+categoryListBtn.forEach(btn =>{
+	btn.addEventListener("click" , ()=>{
+		categoryListBtn.forEach(b => b.classList.remove("active"));
+		btn.classList.add("active");
 	})
 })
 const swiper = new Swiper('.productsSwiper', {
