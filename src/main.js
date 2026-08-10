@@ -50,12 +50,18 @@ function toggleBtn(){
 	})
 }
 toggleBtn();
-function focusActiveTab(btn) {
-	btn.scrollIntoView({
-		behavior: "smooth",
-		inline: "center",
-		block: "nearest",
-	});
+function focusActiveTab(btn, behavior = "smooth") {
+	const container = btn.closest("nav");
+	const containerRect = container.getBoundingClientRect();
+	const btnRect = btn.getBoundingClientRect();
+
+	const scrollLeft =
+		container.scrollLeft +
+		(btnRect.left - containerRect.left) -
+		(containerRect.width / 2) +
+		(btnRect.width / 2);
+
+	container.scrollTo({ left: scrollLeft, behavior });
 }
 footerItem.forEach(item =>{
 	item.addEventListener("click", ()=>{
@@ -80,8 +86,9 @@ categoryListBtn.forEach(btn =>{
 	})
 })
 const defaultActiveBtn = document.querySelector(".category-list-btn.active");
-if(defaultActiveBtn){
-	focusActiveTab(defaultActiveBtn);
+if (defaultActiveBtn) {
+	dataCategory = defaultActiveBtn.dataset.category;
+	focusActiveTab(defaultActiveBtn, "auto");
 }
 const swiper = new Swiper('.productsSwiper', {
 	modules: [Navigation, Pagination],
