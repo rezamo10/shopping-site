@@ -14,7 +14,9 @@ const popMessage = document.querySelector(".pop-message");
 const mailBtnMobile = document.querySelectorAll(".mail-btn-data");
 const footerItem = document.querySelectorAll(".footer-item");
 const categoryListBtn = document.querySelectorAll(".category-list-btn");
+const panelContainers = document.querySelectorAll(".panel");
 let toastTimer;
+let dataCategory;
 
 navLinks.forEach(link => {
 	link.addEventListener("click" , (e)=>{
@@ -48,6 +50,13 @@ function toggleBtn(){
 	})
 }
 toggleBtn();
+function focusActiveTab(btn) {
+	btn.scrollIntoView({
+		behavior: "smooth",
+		inline: "center",
+		block: "nearest",
+	});
+}
 footerItem.forEach(item =>{
 	item.addEventListener("click", ()=>{
 		const isAlreadyActive = item.classList.contains("is-active");
@@ -60,9 +69,20 @@ footerItem.forEach(item =>{
 categoryListBtn.forEach(btn =>{
 	btn.addEventListener("click" , ()=>{
 		categoryListBtn.forEach(b => b.classList.remove("active"));
+		dataCategory = btn.dataset.category;
 		btn.classList.add("active");
+
+		panelContainers.forEach(panel =>{
+			const isActive = dataCategory === panel.dataset.category;
+			console.log(isActive);
+			panel.classList.toggle("active", isActive);
+		})
 	})
 })
+const defaultActiveBtn = document.querySelector(".category-list-btn.active");
+if(defaultActiveBtn){
+	focusActiveTab(defaultActiveBtn);
+}
 const swiper = new Swiper('.productsSwiper', {
 	modules: [Navigation, Pagination],
 	slidesPerView: 4,
@@ -137,6 +157,21 @@ const swiper4 = new Swiper('.swiper-product-slide', {
 		900: { slidesPerView: 4, spaceBetween: 24 },
 		1024: { slidesPerView: 4, spaceBetween: 24},
 		1280: { slidesPerView: 5.5, spaceBetween: 24},
+	},
+});
+const swiper5 = new Swiper('.category-tabs', {
+	modules: [Navigation, Pagination],
+	slidesPerView: 4,
+	spaceBetween: 24,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		0: { slidesPerView: 1.50, spaceBetween: 16 },
+		640: { slidesPerView: 2, spaceBetween: 16 },
+		900: { slidesPerView: 3, spaceBetween: 24 },
+		1024: { slidesPerView: 4, spaceBetween: 24 },
 	},
 });
 menuBtn.addEventListener("click", showMenu);

@@ -254,6 +254,12 @@
 .category-list.active::after{
 	@apply bg-orange-400 bottom-2 md:bottom-2.5;
 }
+.panel{
+	display: none;
+}
+.panel.active{
+	display: block;
+}
 @media (min-width: 900px) {
 	.swiper-product-slide .swiper-pagination,
 	.swiper-category-slide .swiper-pagination {
