@@ -260,6 +260,12 @@
 .panel.active{
 	display: block;
 }
+.fg-password{
+	@apply w-2 h-2 rounded-full bg-neutral-200 transition-all;
+}
+.fg-password.active{
+	@apply bg-neutral-400;
+}
 @media (min-width: 900px) {
 	.swiper-product-slide .swiper-pagination,
 	.swiper-category-slide .swiper-pagination {
