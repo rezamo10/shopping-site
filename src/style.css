@@ -38,10 +38,16 @@
 	border-radius: 50px;
 	transition: all 150ms ease-in;
 }
-.nav-link.active::after{
+.nav-link:hover::after {
 	width: 42px;
 }
-.nav-link.active{
+.nav-link:hover {
+	color: #EB8426;
+}
+.group\/all:hover .nav-link::after {
+	width: 42px;
+}
+.group\/all:hover .nav-link {
 	color: #EB8426;
 }
 .overlay{

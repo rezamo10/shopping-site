@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const navLinks = document.querySelectorAll(".nav-link");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const menu = document.querySelector(".menu");
@@ -18,12 +17,6 @@ const panelContainers = document.querySelectorAll(".panel");
 let toastTimer;
 let dataCategory;
 
-navLinks.forEach(link => {
-	link.addEventListener("click" , (e)=>{
-		navLinks.forEach(l => l.classList.remove("active"));
-		e.target.classList.add("active");
-	})
-})
 function hideMenu() {
 	menu.classList.remove("active");
 }
