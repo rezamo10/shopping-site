@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import { supabase } from './js/supabaseClient.js';
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const menuWrapper = document.querySelector(".menu-wrapper");
@@ -213,3 +213,19 @@ closeBtn.addEventListener("click", hideMenu);
 mailInput.addEventListener("input", toggleBtn);
 mailBtnMobile.forEach(btn => btn.addEventListener("click", checkEmail));
 overlay.addEventListener("click", hideMenu);
+async function checkAuthStatus() {
+	const { data: { session } } = await supabase.auth.getSession();
+
+	if (session) {
+		// کاربر لاگینه
+		console.log('لاگین:', session.user.email);
+		// مثلاً: نمایش ایمیل یا اسم کاربر جای دکمه‌های Login/Register
+		// و نمایش دکمه Logout
+	} else {
+		// کاربر لاگین نیست
+		console.log('لاگین نیست');
+		// نمایش دکمه‌های Login/Register
+	}
+}
+
+checkAuthStatus();
